@@ -1,5 +1,6 @@
 ﻿using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Net.Mime;
@@ -31,7 +32,43 @@ namespace HealthCareApp.Controllers
 
             return View(adminList);
         }
+        public IActionResult Login()
+        {
+            return View();
+        }
 
+        [HttpPost]
+      
+        public async Task<IActionResult> Login(Login admin)
+        {
+            try
+            {
+                var json = JsonConvert.SerializeObject(admin);
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await client.PostAsync(client.BaseAddress + "/Admins/Authenticate", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    return RedirectToAction("Dashboard");
+                }
+                else
+                {
+                    TempData["errorMassage"] = "Invalid username or password";
+                    return View();
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["errorMassage"] = ex.Message;
+                return View();
+            }
+        }
+
+        public IActionResult Dashboard()
+        {
+            return View();
+        }
         public IActionResult Create()
         {
             return View();
@@ -45,6 +82,7 @@ namespace HealthCareApp.Controllers
 
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
                 multiPartContent.Add(new StringContent(admin.UserName ?? "", Encoding.UTF8), "UserName");
+                multiPartContent.Add(new StringContent(admin.Password ?? "", Encoding.UTF8), "Password");
                 multiPartContent.Add(new StringContent(admin.Address ?? "", Encoding.UTF8), "Address");
                 multiPartContent.Add(new StringContent(admin.DateOfBirth ?? "", Encoding.UTF8), "DateOfBirth");
                 multiPartContent.Add(new StringContent(admin.Email ?? "", Encoding.UTF8), "Email");
@@ -103,6 +141,7 @@ namespace HealthCareApp.Controllers
             {
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
                 multiPartContent.Add(new StringContent(admin.UserName ?? "", Encoding.UTF8), "UserName");
+                multiPartContent.Add(new StringContent(admin.Password ?? "", Encoding.UTF8), "Password");
                 multiPartContent.Add(new StringContent(admin.Address ?? "", Encoding.UTF8), "Address");
                 multiPartContent.Add(new StringContent(admin.DateOfBirth ?? "", Encoding.UTF8), "DateOfBirth");
                 multiPartContent.Add(new StringContent(admin.Email ?? "", Encoding.UTF8), "Email");
@@ -205,4 +244,8 @@ namespace HealthCareApp.Controllers
 
         }
     }
-}
+
+  
+
+
+    }

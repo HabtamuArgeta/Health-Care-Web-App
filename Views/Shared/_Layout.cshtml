@@ -18,27 +18,27 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                    <ul class="navbar-nav flex-grow-1 row">
+                        <li class="nav-item col-3">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown col-4">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    SignUp as 
+                                    SignUp
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-controller="Makes" action="Index" >Doctor</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Models" action="Index">Patient</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Makes" asp-action="Index" >As Doctor</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Models" asp-action="Index">As Patient</a></li>
                                 </ul>
                             </li>
-                             <li class="nav-item dropdown">
+                             <li class="nav-item dropdown col-5">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Login as 
+                                    Login
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-controller="Models" action="Index">Admin</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Makes" action="Index" >Doctor</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Models" action="Index">Patient</a></li>
+                                <li><a class="dropdown-item" asp-controller="AdminViewModel" asp-action="Login">As Admin</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Makes" asp-action="Index" >As Doctor</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Models" asp-action="Index">As Patient</a></li>
                                 </ul>
                             </li>
                     </ul>

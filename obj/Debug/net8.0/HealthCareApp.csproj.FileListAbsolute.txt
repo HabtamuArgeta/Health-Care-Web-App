@@ -256,3 +256,4 @@ C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCa
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\obj\Debug\net8.0\HealthCareApp.sourcelink.json
