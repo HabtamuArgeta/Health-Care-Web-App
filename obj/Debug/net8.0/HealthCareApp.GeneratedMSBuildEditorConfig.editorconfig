@@ -30,12 +30,12 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/AdminViewModel/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WaWV3TW9kZWxcQ3JlYXRlLmNzaHRtbA==
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/AdminViewModel/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WaWV3TW9kZWxcQWRtaW5EYXNoYm9hcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/AdminViewModel/Dashboard.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WaWV3TW9kZWxcRGFzaGJvYXJkLmNzaHRtbA==
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/AdminViewModel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WaWV3TW9kZWxcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/AdminViewModel/Delete.cshtml]
@@ -58,12 +58,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WaWV3TW9kZWxcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/DoctorDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXERvY3RvckRhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/PatientViewModel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFZpZXdNb2RlbFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/PatientViewModel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFZpZXdNb2RlbFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/PatientViewModel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFZpZXdNb2RlbFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/PatientViewModel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFZpZXdNb2RlbFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/PatientViewModel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFZpZXdNb2RlbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/PatientViewModel/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFZpZXdNb2RlbFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/PatientViewModel/PatientDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF0aWVudFZpZXdNb2RlbFxQYXRpZW50RGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/Shared/Error.cshtml]

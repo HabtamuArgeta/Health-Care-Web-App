@@ -1,6 +1,5 @@
 ﻿using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Net.Mime;
@@ -8,12 +7,12 @@ using System.Text;
 
 namespace HealthCareApp.Controllers
 {
-    public class AdminViewModelController : Controller
+    public class PatientViewModelController : Controller
     {
         Uri baseAddress = new Uri("https://localhost:44343/api");
         HttpClient client;
 
-        public AdminViewModelController()
+        public PatientViewModelController()
         {
             client = new HttpClient();
             client.BaseAddress = baseAddress;
@@ -21,36 +20,37 @@ namespace HealthCareApp.Controllers
 
         public IActionResult Index()
         {
-            List<AdminViewModel> adminList = new List<AdminViewModel>();
+            List<PatientViewModel> patientList = new List<PatientViewModel>();
 
-            HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/Admins").Result;
+            HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/Patients").Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
-                adminList = JsonConvert.DeserializeObject<List<AdminViewModel>>(data);
+                patientList = JsonConvert.DeserializeObject<List<PatientViewModel>>(data);
             }
 
-            return View(adminList);
+            return View(patientList);
         }
+
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-      
-        public async Task<IActionResult> Login(Login admin)
+
+        public async Task<IActionResult> Login(Login patient)
         {
             try
             {
-                var json = JsonConvert.SerializeObject(admin);
+                var json = JsonConvert.SerializeObject(patient);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsync(client.BaseAddress + "/Admins/Authenticate", content);
+                HttpResponseMessage response = await client.PostAsync(client.BaseAddress + "/Patients/Authenticate", content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("AdminDashboard");
+                    return RedirectToAction("PatientDashboard");
                 }
                 else
                 {
@@ -65,7 +65,7 @@ namespace HealthCareApp.Controllers
             }
         }
 
-        public IActionResult AdminDashboard()
+        public IActionResult PatientDashboard()
         {
             return View();
         }
@@ -75,38 +75,35 @@ namespace HealthCareApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(AdminViewModel admin)
+        public IActionResult Create(PatientViewModel patient)
         {
             try
             {
 
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
-                multiPartContent.Add(new StringContent(admin.UserName ?? "", Encoding.UTF8), "UserName");
-                multiPartContent.Add(new StringContent(admin.Password ?? "", Encoding.UTF8), "Password");
-                multiPartContent.Add(new StringContent(admin.Address ?? "", Encoding.UTF8), "Address");
-                multiPartContent.Add(new StringContent(admin.DateOfBirth ?? "", Encoding.UTF8), "DateOfBirth");
-                multiPartContent.Add(new StringContent(admin.Email ?? "", Encoding.UTF8), "Email");
-                multiPartContent.Add(new StringContent(admin.Gender ?? "", Encoding.UTF8), "Gender");
-                multiPartContent.Add(new StringContent(admin.Phone ?? "", Encoding.UTF8), "Phone");
+                multiPartContent.Add(new StringContent(patient.UserName ?? "", Encoding.UTF8), "UserName");
+                multiPartContent.Add(new StringContent(patient.Password ?? "", Encoding.UTF8), "Password");
+                multiPartContent.Add(new StringContent(patient.Email ?? "", Encoding.UTF8), "Email");
+                multiPartContent.Add(new StringContent(patient.Phone ?? "", Encoding.UTF8), "Phone");
 
-                var imageContent = new StreamContent(admin.Photo.OpenReadStream());
+                var imageContent = new StreamContent(patient.Photo.OpenReadStream());
                 imageContent.Headers.ContentType = MediaTypeHeaderValue.Parse(MediaTypeNames.Image.Jpeg);
-                multiPartContent.Add(imageContent, "Photo", admin.Photo.FileName);
+                multiPartContent.Add(imageContent, "Photo", patient.Photo.FileName);
 
-                HttpResponseMessage response = client.PostAsync(client.BaseAddress + "/Admins", multiPartContent).Result;
+                HttpResponseMessage response = client.PostAsync(client.BaseAddress + "/Patients", multiPartContent).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    TempData["successMessage"] = "Admin created successfully";
+                    TempData["successMessage"] = "Patient created successfully";
                     return RedirectToAction("Index");
                 }
-                return View(admin);
+                return View(patient);
             }
             catch (Exception ex)
 
             {
                 TempData["errorMassage"] = ex.Message;
-                return View(admin);
+                return View(patient);
             }
         }
 
@@ -114,16 +111,16 @@ namespace HealthCareApp.Controllers
         {
             try
             {
-                AdminViewModel admin = new AdminViewModel();
-                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Admins/{id}").Result;
+                PatientViewModel patient = new PatientViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Patients/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     string data = response.Content.ReadAsStringAsync().Result;
-                    admin = JsonConvert.DeserializeObject<AdminViewModel>(data);
+                    patient = JsonConvert.DeserializeObject<PatientViewModel>(data);
 
                 }
-                return View(admin);
+                return View(patient);
             }
             catch (Exception ex)
             {
@@ -135,56 +132,54 @@ namespace HealthCareApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(AdminViewModel admin)
+        public IActionResult Edit(PatientViewModel patient)
         {
             try
             {
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
-                multiPartContent.Add(new StringContent(admin.UserName ?? "", Encoding.UTF8), "UserName");
-                multiPartContent.Add(new StringContent(admin.Password ?? "", Encoding.UTF8), "Password");
-                multiPartContent.Add(new StringContent(admin.Address ?? "", Encoding.UTF8), "Address");
-                multiPartContent.Add(new StringContent(admin.DateOfBirth ?? "", Encoding.UTF8), "DateOfBirth");
-                multiPartContent.Add(new StringContent(admin.Email ?? "", Encoding.UTF8), "Email");
-                multiPartContent.Add(new StringContent(admin.Gender ?? "", Encoding.UTF8), "Gender");
-                multiPartContent.Add(new StringContent(admin.Phone ?? "", Encoding.UTF8), "Phone");
+                multiPartContent.Add(new StringContent(patient.UserName ?? "", Encoding.UTF8), "UserName");
+                multiPartContent.Add(new StringContent(patient.Password ?? "", Encoding.UTF8), "Password");
+                multiPartContent.Add(new StringContent(patient.Email ?? "", Encoding.UTF8), "Email");
+                multiPartContent.Add(new StringContent(patient.Phone ?? "", Encoding.UTF8), "Phone");
 
-                var imageContent = new StreamContent(admin.Photo.OpenReadStream());
+                var imageContent = new StreamContent(patient.Photo.OpenReadStream());
                 imageContent.Headers.ContentType = MediaTypeHeaderValue.Parse(MediaTypeNames.Image.Jpeg);
-                multiPartContent.Add(imageContent, "Photo", admin.Photo.FileName);
+                multiPartContent.Add(imageContent, "Photo", patient.Photo.FileName);
 
-                HttpResponseMessage response = client.PutAsync(client.BaseAddress + $"/Admins/{admin.Id}", multiPartContent).Result;
+                HttpResponseMessage response = client.PutAsync(client.BaseAddress + $"/Patients/{patient.Id}", multiPartContent).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    TempData["successMessage"] = "Admin Updated successfully";
+                    TempData["successMessage"] = "Patient Updated successfully";
                     return RedirectToAction("Index");
                 }
 
-                return View(admin);
+                return View(patient);
             }
             catch (Exception ex)
             {
                 TempData["errorMessage"] = ex.Message;
-                return View(admin);
+                return View(patient);
             }
         }
 
 
         [HttpGet]
+       
         public IActionResult Details(string id)
         {
             try
             {
-                AdminViewModel admin = new AdminViewModel();
-                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Admins/{id}").Result;
+                PatientViewModel patient = new PatientViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Patients/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     string data = response.Content.ReadAsStringAsync().Result;
-                    admin = JsonConvert.DeserializeObject<AdminViewModel>(data);
+                    patient = JsonConvert.DeserializeObject<PatientViewModel>(data);
 
                 }
-                return View(admin);
+                return View(patient);
             }
             catch (Exception ex)
             {
@@ -195,22 +190,21 @@ namespace HealthCareApp.Controllers
 
         }
 
-
         [HttpGet]
         public IActionResult Delete(string id)
         {
             try
             {
-                AdminViewModel admin = new AdminViewModel();
-                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Admins/{id}").Result;
+                PatientViewModel patient = new PatientViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Patients/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     string data = response.Content.ReadAsStringAsync().Result;
-                    admin = JsonConvert.DeserializeObject<AdminViewModel>(data);
+                    patient = JsonConvert.DeserializeObject<PatientViewModel>(data);
 
                 }
-                return View(admin);
+                return View(patient);
             }
             catch (Exception ex)
             {
@@ -227,7 +221,7 @@ namespace HealthCareApp.Controllers
         {
             try
             {
-                HttpResponseMessage response = client.DeleteAsync(client.BaseAddress + $"/Admins/{id}").Result;
+                HttpResponseMessage response = client.DeleteAsync(client.BaseAddress + $"/Patients/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -244,8 +238,4 @@ namespace HealthCareApp.Controllers
 
         }
     }
-
-  
-
-
-    }
+}

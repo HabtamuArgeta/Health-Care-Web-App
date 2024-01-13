@@ -1,6 +1,5 @@
 ﻿using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Net.Mime;
@@ -8,49 +7,48 @@ using System.Text;
 
 namespace HealthCareApp.Controllers
 {
-    public class AdminViewModelController : Controller
+    public class DocterViewModelController : Controller
     {
         Uri baseAddress = new Uri("https://localhost:44343/api");
         HttpClient client;
 
-        public AdminViewModelController()
+        public DocterViewModelController()
         {
             client = new HttpClient();
             client.BaseAddress = baseAddress;
         }
-
         public IActionResult Index()
         {
-            List<AdminViewModel> adminList = new List<AdminViewModel>();
+            List<DocterViewModel> doctorList = new List<DocterViewModel>();
 
-            HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/Admins").Result;
+            HttpResponseMessage response = client.GetAsync(client.BaseAddress + "/Doctors").Result;
             if (response.IsSuccessStatusCode)
             {
                 string data = response.Content.ReadAsStringAsync().Result;
-                adminList = JsonConvert.DeserializeObject<List<AdminViewModel>>(data);
+                doctorList = JsonConvert.DeserializeObject<List<DocterViewModel>>(data);
             }
 
-            return View(adminList);
-        }
+            return View(doctorList);
+         }
         public IActionResult Login()
         {
             return View();
         }
 
         [HttpPost]
-      
-        public async Task<IActionResult> Login(Login admin)
+
+        public async Task<IActionResult> Login(Login doctor)
         {
             try
             {
-                var json = JsonConvert.SerializeObject(admin);
+                var json = JsonConvert.SerializeObject(doctor);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-                HttpResponseMessage response = await client.PostAsync(client.BaseAddress + "/Admins/Authenticate", content);
+                HttpResponseMessage response = await client.PostAsync(client.BaseAddress + "/Doctors/Authenticate", content);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("AdminDashboard");
+                    return RedirectToAction("DoctorDashboard");
                 }
                 else
                 {
@@ -65,7 +63,7 @@ namespace HealthCareApp.Controllers
             }
         }
 
-        public IActionResult AdminDashboard()
+        public IActionResult DoctorDashboard()
         {
             return View();
         }
@@ -244,8 +242,4 @@ namespace HealthCareApp.Controllers
 
         }
     }
-
-  
-
-
-    }
+}
