@@ -28,7 +28,7 @@ namespace HealthCareApp.Models
 
         
         public string? PhotoUrl { get; set; }
-        IFormFile Photo { get; set; }
+       public  IFormFile Photo { get; set; }
         
    
     }

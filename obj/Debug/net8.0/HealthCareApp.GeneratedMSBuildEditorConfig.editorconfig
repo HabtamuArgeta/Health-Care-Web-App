@@ -58,8 +58,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5WaWV3TW9kZWxcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/DoctorDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXERvY3RvckRhc2hib2FyZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRG9jdGVyVmlld01vZGVsXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/DocterViewModel/Index.cshtml]
