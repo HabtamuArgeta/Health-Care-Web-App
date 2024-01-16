@@ -231,7 +231,7 @@ namespace HealthCareApp.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    TempData["successMessage"] = "Student deleted successfully";
+                    TempData["successMessage"] = "Appointments deleted successfully";
                     return RedirectToAction("Index");
                 }
                 return View();
