@@ -14,14 +14,17 @@
             <div class="container-fluid">
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 row">
-                        <li class="nav-item col-5">
+                        <li class="nav-item col-4">
                             <a class="nav-link text-dark" asp-area="" asp-controller="PatientViewModel" asp-action="Index">Profile</a>
                         </li>
-                        <li class="nav-item col-5">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Chat">Chat</a>
+                        <li class="nav-item col-3">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="AppointmentViewModel" asp-action="Index">Appointments</a>
+                        </li>
+                        <li class="nav-item col-3">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="ChatViewModel" asp-action="Index">Chats</a>
                         </li>
                         <li class="nav-item col-2">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">logout</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
                         </li>
                     </ul>
 

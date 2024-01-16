@@ -82,6 +82,18 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFZpZXdNb2RlbFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/ChatViewModel/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFZpZXdNb2RlbFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/ChatViewModel/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFZpZXdNb2RlbFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/ChatViewModel/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFZpZXdNb2RlbFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Program Files/installed apps/Linux comanned/crzylearning/DotNet Apps/HealthCareApp/Views/ChatViewModel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2hhdFZpZXdNb2RlbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

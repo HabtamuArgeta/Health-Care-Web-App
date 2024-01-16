@@ -68,16 +68,16 @@ namespace HealthCareApp.Controllers
         {
             try
             {
-                AppointmentViewModel appointment = new AppointmentViewModel();
-                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Appointments/{id}").Result;
+               ChatViewModel chats = new ChatViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Chats/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     string data = response.Content.ReadAsStringAsync().Result;
-                    appointment = JsonConvert.DeserializeObject<AppointmentViewModel>(data);
+                    chats = JsonConvert.DeserializeObject<ChatViewModel>(data);
 
                 }
-                return View(appointment);
+                return View(chats);
             }
             catch (Exception ex)
             {
@@ -89,29 +89,30 @@ namespace HealthCareApp.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(AppointmentViewModel appointment)
+        public IActionResult Edit(ChatViewModel chats)
         {
             try
             {
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
-                multiPartContent.Add(new StringContent(appointment.DoctorUserName ?? "", Encoding.UTF8), "DoctorUserName");
-                multiPartContent.Add(new StringContent(appointment.PatientUserName ?? "", Encoding.UTF8), "PatientUserName");
-                multiPartContent.Add(new StringContent(appointment.Date ?? "", Encoding.UTF8), "Date");
+                multiPartContent.Add(new StringContent(chats.DoctorUserName ?? "", Encoding.UTF8), "DoctorUserName");
+                multiPartContent.Add(new StringContent(chats.PatientUserName ?? "", Encoding.UTF8), "PatientUserName");
+                multiPartContent.Add(new StringContent(chats.CreatedAt ?? "", Encoding.UTF8), "CreatedAt");
+                multiPartContent.Add(new StringContent(chats.Message ?? "", Encoding.UTF8), "Message");
 
-                HttpResponseMessage response = client.PutAsync(client.BaseAddress + $"/Appointments/{appointment.Id}", multiPartContent).Result;
+                HttpResponseMessage response = client.PutAsync(client.BaseAddress + $"/Chats/{chats.Id}", multiPartContent).Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    TempData["successMessage"] = "Appointment Updated successfully";
+                    TempData["successMessage"] = "Chats Updated successfully";
                     return RedirectToAction("Index");
                 }
 
-                return View(appointment);
+                return View(chats);
             }
             catch (Exception ex)
             {
                 TempData["errorMessage"] = ex.Message;
-                return View(appointment);
+                return View(chats);
             }
         }
 
@@ -121,16 +122,16 @@ namespace HealthCareApp.Controllers
         {
             try
             {
-                AppointmentViewModel appointment = new AppointmentViewModel();
-                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Appointments/{id}").Result;
+                ChatViewModel chats = new ChatViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Chats/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     string data = response.Content.ReadAsStringAsync().Result;
-                    appointment = JsonConvert.DeserializeObject<AppointmentViewModel>(data);
+                    chats = JsonConvert.DeserializeObject<ChatViewModel>(data);
 
                 }
-                return View(appointment);
+                return View(chats);
             }
             catch (Exception ex)
             {
@@ -147,16 +148,16 @@ namespace HealthCareApp.Controllers
         {
             try
             {
-                AppointmentViewModel appointment = new AppointmentViewModel();
-                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Appointments/{id}").Result;
+                ChatViewModel chats = new ChatViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Chats/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
                     string data = response.Content.ReadAsStringAsync().Result;
-                    appointment = JsonConvert.DeserializeObject<AppointmentViewModel>(data);
+                    chats = JsonConvert.DeserializeObject<ChatViewModel>(data);
 
                 }
-                return View(appointment);
+                return View(chats);
             }
             catch (Exception ex)
             {
@@ -173,11 +174,11 @@ namespace HealthCareApp.Controllers
         {
             try
             {
-                HttpResponseMessage response = client.DeleteAsync(client.BaseAddress + $"/Appointments/{id}").Result;
+                HttpResponseMessage response = client.DeleteAsync(client.BaseAddress + $"/Chats/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    TempData["successMessage"] = "Appointments deleted successfully";
+                    TempData["successMessage"] = "Chats deleted successfully";
                     return RedirectToAction("Index");
                 }
                 return View();
