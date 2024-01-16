@@ -243,9 +243,7 @@ namespace HealthCareApp.Controllers
             }
 
         }
-    }
-
-  
+     }
 
 
-    }
+ }
