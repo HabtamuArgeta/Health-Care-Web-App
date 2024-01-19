@@ -257,3 +257,10 @@ C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCa
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
 C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\obj\Debug\net8.0\HealthCareApp.sourcelink.json
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
+C:\Program Files\installed apps\Linux comanned\crzylearning\DotNet Apps\HealthCareApp\bin\Debug\net8.0\Microsoft.JSInterop.dll

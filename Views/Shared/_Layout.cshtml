@@ -48,7 +48,7 @@
                         }
                         else if (Roles.UserRole == "Admin") {
                            
-                            <li class="nav-item dropdown col-8">
+                            <li class="nav-item dropdown col-2">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Manage
                                 </a>
@@ -57,9 +57,9 @@
                                     <li><a class="dropdown-item" asp-controller="PatientViewModel" asp-action="Index">Patient</a></li>
                                 </ul>
                             </li>
-                            
+                            <li class="nav-item col-6"></li>
                             <li class="nav-item col-1">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminViewModel" asp-action="Index">Profile</a>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminViewModel" asp-action="Profile">Profile</a>
                             </li>
                             <li class="nav-item col-1">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">logout</a>

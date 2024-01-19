@@ -1,13 +1,13 @@
 ﻿@model HealthCareApp.Models.AdminViewModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Admin's Detail";
 }
 
-<h1>Details</h1>
+<h1>Details of Admin @Html.DisplayFor(model => model.UserName)</h1>
 
 <div>
-    <h4>AdminViewModel</h4>
+ 
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -68,5 +68,5 @@
 </div>
 <div>
    
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back</a>
 </div>

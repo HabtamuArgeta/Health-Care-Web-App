@@ -1,10 +1,10 @@
 ﻿@model HealthCareApp.Models.PatientViewModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Patient's Detail";
 }
 
-<h1>Details</h1>
+<h1>Details of Patient @Html.DisplayFor(model => model.UserName)</h1>
 
 <div>
     <h4>PatientViewModel</h4>
@@ -50,5 +50,5 @@
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id  }) |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Back </a>
 </div>

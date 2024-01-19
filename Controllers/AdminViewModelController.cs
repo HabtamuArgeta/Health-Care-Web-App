@@ -51,8 +51,8 @@ namespace HealthCareApp.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    Roles role = new Roles("Admin");
                     
+                    new Roles("Admin", admin.UserName);
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -66,12 +66,7 @@ namespace HealthCareApp.Controllers
                 TempData["errorMassage"] = ex.Message;
                 return View();
             }
-        }
-
-        public IActionResult AdminDashboard()
-        {
-            return View();
-        }
+        } 
         public IActionResult Create()
         {
             return View();
@@ -180,6 +175,30 @@ namespace HealthCareApp.Controllers
             {
                 AdminViewModel admin = new AdminViewModel();
                 HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Admins/{id}").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string data = response.Content.ReadAsStringAsync().Result;
+                    admin = JsonConvert.DeserializeObject<AdminViewModel>(data);
+
+                }
+                return View(admin);
+            }
+            catch (Exception ex)
+            {
+                TempData["errorMassage"] = ex.Message;
+                return View();
+
+            }
+
+        }
+
+        public IActionResult Profile()
+        {
+            try
+            {
+                AdminViewModel admin = new AdminViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Admins/{Roles.UserName}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
