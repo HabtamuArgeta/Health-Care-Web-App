@@ -19,28 +19,52 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1 row">
-                        <li class="nav-item col-3">
+                        <li class="nav-item col-1">  </li>
+                        <li class="nav-item col-1">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item dropdown col-4">
+                        @if (string.IsNullOrEmpty(Roles.UserRole))
+                        {
+                            <li class="nav-item col-6">  </li>
+                            <li class="nav-item dropdown col-2">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     SignUp
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" asp-controller="Makes" asp-action="Index" >As Doctor</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Models" asp-action="Index">As Patient</a></li>
+                                    <li><a class="dropdown-item" asp-controller="DocterViewModel" asp-action="Create">As Doctor</a></li>
+                                    <li><a class="dropdown-item" asp-controller="PatientViewModel" asp-action="Create">As Patient</a></li>
                                 </ul>
                             </li>
-                             <li class="nav-item dropdown col-5">
+                            <li class="nav-item dropdown col-2">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Login
                                 </a>
                                 <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" asp-controller="AdminViewModel" asp-action="Login">As Admin</a></li>
-                                <li><a class="dropdown-item" asp-controller="DocterViewModel" asp-action="Login">As Doctor</a></li>
-                                <li><a class="dropdown-item" asp-controller="PatientViewModel" asp-action="Login">As Patient</a></li>
+                                    <li><a class="dropdown-item" asp-controller="AdminViewModel" asp-action="Login">As Admin</a></li>
+                                    <li><a class="dropdown-item" asp-controller="DocterViewModel" asp-action="Login">As Doctor</a></li>
+                                    <li><a class="dropdown-item" asp-controller="PatientViewModel" asp-action="Login">As Patient</a></li>
                                 </ul>
                             </li>
+                        }
+                        else if (Roles.UserRole == "Admin") {
+                           
+                            <li class="nav-item dropdown col-8">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Manage
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="DocterViewModel" asp-action="Index">Doctor</a></li>
+                                    <li><a class="dropdown-item" asp-controller="PatientViewModel" asp-action="Index">Patient</a></li>
+                                </ul>
+                            </li>
+                            
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminViewModel" asp-action="Index">Profile</a>
+                            </li>
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">logout</a>
+                            </li>
+                        }
                     </ul>
                    
                 </div>

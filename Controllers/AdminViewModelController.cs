@@ -1,6 +1,7 @@
-﻿using HealthCareApp.Models;
+﻿
+using HealthCareApp.Helper;
+using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
 using System.Net.Mime;
@@ -50,7 +51,9 @@ namespace HealthCareApp.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("AdminDashboard");
+                    Roles role = new Roles("Admin");
+                    
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
