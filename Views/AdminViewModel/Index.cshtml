@@ -10,7 +10,9 @@
 <table class="table">
     <thead>
         <tr>
-           
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.UserName)
             </th>
@@ -27,9 +29,11 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+   @foreach (var item in Model) {
         <tr>
-            
+                <td>
+                    <img src="_IMG_20230208_133451.jpg" />
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
             </td>

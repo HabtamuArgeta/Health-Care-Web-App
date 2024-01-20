@@ -249,6 +249,14 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Admins\\_IMG_20230208_133451.jpg",
+      "PackagePath": "staticwebassets\\photos\\Admins\\_IMG_20230208_133451.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Admins\\_IMG_20230505_090741.jpg",
+      "PackagePath": "staticwebassets\\photos\\Admins\\_IMG_20230505_090741.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HealthCareApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },

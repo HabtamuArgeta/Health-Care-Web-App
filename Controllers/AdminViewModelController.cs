@@ -72,6 +72,12 @@ namespace HealthCareApp.Controllers
             return View();
         }
 
+        public IActionResult Logout()
+        {
+            new Roles("", "");
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpPost]
         public IActionResult Create(AdminViewModel admin)
         {
