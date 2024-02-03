@@ -25,4 +25,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\photos\Doctors\" />
+    <Folder Include="wwwroot\photos\Posts\" />
+    <Folder Include="wwwroot\photos\Patients\" />
+  </ItemGroup>
+
 </Project>

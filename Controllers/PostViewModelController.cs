@@ -57,7 +57,7 @@ namespace HealthCareApp.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["successMessage"] = "post created successfully";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", "Home");
                 }
                 return View(posts);
             }

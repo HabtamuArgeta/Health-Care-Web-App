@@ -32,7 +32,7 @@
    @foreach (var item in Model) {
         <tr>
                 <td>
-                    <img src="_IMG_20230208_133451.jpg" />
+                    <img src=" @Html.DisplayFor(modelItem => item.PhotoUrl)" class="rounded-circle" style="width:50px;height:50px;" />
                 </td>
             <td>
                 @Html.DisplayFor(modelItem => item.UserName)
@@ -47,9 +47,10 @@
             </td>
             
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new {id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                     <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                
             </td>
         </tr>
 }

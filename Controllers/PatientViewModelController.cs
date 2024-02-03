@@ -1,4 +1,5 @@
-﻿using HealthCareApp.Models;
+﻿using HealthCareApp.Helper;
+using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -50,7 +51,8 @@ namespace HealthCareApp.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("PatientDashboard");
+                    new Roles("Patient", patient.UserName);
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -65,10 +67,7 @@ namespace HealthCareApp.Controllers
             }
         }
 
-        public IActionResult PatientDashboard()
-        {
-            return View();
-        }
+     
         public IActionResult Create()
         {
             return View();
@@ -79,7 +78,13 @@ namespace HealthCareApp.Controllers
         {
             try
             {
+                HttpResponseMessage search = client.GetAsync(client.BaseAddress + $"/Patients/ByUserName/{patient.UserName}").Result;
 
+                if (search.IsSuccessStatusCode)
+                {
+                    TempData["errorMassage"] = $"{patient.UserName} is already exist";
+                    return View(patient);
+                }
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
                 multiPartContent.Add(new StringContent(patient.UserName ?? "", Encoding.UTF8), "UserName");
                 multiPartContent.Add(new StringContent(patient.Password ?? "", Encoding.UTF8), "Password");
@@ -95,7 +100,7 @@ namespace HealthCareApp.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["successMessage"] = "Patient created successfully";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Login");
                 }
                 return View(patient);
             }
@@ -172,6 +177,29 @@ namespace HealthCareApp.Controllers
             {
                 PatientViewModel patient = new PatientViewModel();
                 HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Patients/{id}").Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    string data = response.Content.ReadAsStringAsync().Result;
+                    patient = JsonConvert.DeserializeObject<PatientViewModel>(data);
+
+                }
+                return View(patient);
+            }
+            catch (Exception ex)
+            {
+                TempData["errorMassage"] = ex.Message;
+                return View();
+
+            }
+
+        }
+        public IActionResult Profile()
+        {
+            try
+            {
+                PatientViewModel patient = new PatientViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Patients/{Roles.UserName}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {

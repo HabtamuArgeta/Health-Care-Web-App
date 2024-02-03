@@ -1,0 +1,49 @@
+﻿
+@model HealthCareApp.Models.PatientViewModel
+
+@{
+    ViewData["Title"] = "Profile";
+}              
+
+<div class="container mt-5">
+    <div class="card">
+        <img src="@Html.DisplayFor(model => model.PhotoUrl)" alt="@Html.DisplayNameFor(model => model.Photo)" class="card-img-top img-fluid w-100" style="height: 300px; object-fit: cover;" />
+        <img src="@Html.DisplayFor(model => model.PhotoUrl)" alt="Circled Image" class="circled-image" style="position: absolute; top : 200px; left: 2px; width: 100px; height: 100px; border-radius: 50%;">
+        <div class="card-body">
+            <h1 class="display-4 text-center">Your Profile</h1>
+            <hr />
+            <dl class="row">
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Password)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Password)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Phone)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Phone)
+                </dd>
+                
+            </dl>
+        </div>
+        <div class="card-footer text-right">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id }, new { @class = "btn btn-primary mr-2" }) 
+            @Html.ActionLink("Delete", "Delete", new { id = Model.Id }, new { @class = "btn btn-danger" }) 
+        </div>
+    </div>
+</div>

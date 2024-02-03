@@ -65,6 +65,55 @@
                                 <a class="nav-link text-dark" asp-area="" asp-controller="AdminViewModel" asp-action="Logout">logout</a>
                             </li>
                         }
+                         else if (Roles.UserRole == "Doctor") {
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ChatViewModel" asp-action="Index">Chats</a>
+                            </li>
+                            <li class="nav-item dropdown col-1">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Post
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="PostViewModel" asp-action="Index">Veiw Posts</a></li>
+                                    <li><a class="dropdown-item" asp-controller="PostViewModel" asp-action="Create">New Post</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AppointmentViewModel" asp-action="Index">Appointments</a>
+                            </li>
+                            <li class="nav-item col-5"></li>
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="DocterViewModel" asp-action="Profile">Profile</a>
+                            </li>
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminViewModel" asp-action="Logout">logout</a>
+                            </li>
+                        }
+                        else if (Roles.UserRole == "Patient") {
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="ChatViewModel" asp-action="Index">Chats</a>
+                            </li>
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PostViewModel" asp-action="Index">posts</a>
+                            </li>
+                            
+                            <li class="nav-item dropdown col-2">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Appointment
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" asp-controller="AppointmentViewModel" asp-action="Index">Veiw Appointment</a></li>
+                                    <li><a class="dropdown-item" asp-controller="AppointmentViewModel" asp-action="Create">New Appointment</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item col-4"></li>
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="PatientViewModel" asp-action="Profile">Profile</a>
+                            </li>
+                            <li class="nav-item col-1">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminViewModel" asp-action="Logout">logout</a>
+                            </li>
+                        }
                     </ul>
                    
                 </div>

@@ -1,49 +1,36 @@
 ﻿@model IEnumerable<HealthCareApp.Models.PostViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Posts";
 }
 
-<h1>Index</h1>
+<div class="container mt-5">
+    <h1>Posts</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoctorUserName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DatePublished)
-            </th>
-            
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DoctorUserName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DatePublished)
-            </td>
-           
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id}) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="@item.PhotoUrl" alt="Post Photo" class="card-img-top" style="max-height: 300px; object-fit: cover;">
+                    <div class="card-body row">
+
+                        <div class="card-title col-5">@Html.DisplayFor(modelItem => item.DoctorUserName)</div>
+                       <div class="card-text col-6">@Html.DisplayFor(modelItem => item.DatePublished)</div><br /><br />
+                        <div class="card-text col-11">@Html.DisplayFor(modelItem => item.Description)</div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group" role="group">
+                            @if (Roles.UserRole == "Doctor")
+                            {
+                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

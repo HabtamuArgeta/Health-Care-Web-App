@@ -1,4 +1,5 @@
-﻿using HealthCareApp.Models;
+﻿using HealthCareApp.Helper;
+using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -48,7 +49,8 @@ namespace HealthCareApp.Controllers
 
                 if (response.IsSuccessStatusCode)
                 {
-                    return RedirectToAction("DoctorDashboard");
+                    new Roles("Doctor", doctor.UserName);
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
@@ -63,10 +65,7 @@ namespace HealthCareApp.Controllers
             }
         }
 
-        public IActionResult DoctorDashboard()
-        {
-            return View();
-        }
+       
         public IActionResult Create()
         {
             return View();
@@ -77,7 +76,14 @@ namespace HealthCareApp.Controllers
         {
             try
             {
+               
+                HttpResponseMessage search = client.GetAsync(client.BaseAddress + $"/Doctors/ByUserName/{doctor.UserName}").Result;
 
+                if (search.IsSuccessStatusCode)
+                {
+                    TempData["errorMassage"] = $"{doctor.UserName} is already exist";
+                    return View(doctor);
+                }
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
                 multiPartContent.Add(new StringContent(doctor.UserName ?? "", Encoding.UTF8), "UserName");
                 multiPartContent.Add(new StringContent(doctor.Password ?? "", Encoding.UTF8), "Password");
@@ -95,7 +101,7 @@ namespace HealthCareApp.Controllers
                 if (response.IsSuccessStatusCode)
                 {
                     TempData["successMessage"] = "Doctor created successfully";
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Login");
                 }
                 return View(doctor);
             }
@@ -190,8 +196,30 @@ namespace HealthCareApp.Controllers
             }
 
         }
+        [HttpGet]
+        public IActionResult Profile()
+        {
+            try
+            {
+                DocterViewModel doctor = new DocterViewModel();
+                HttpResponseMessage response = client.GetAsync(client.BaseAddress + $"/Doctors/{Roles.UserName}").Result;
 
+                if (response.IsSuccessStatusCode)
+                {
+                    string data = response.Content.ReadAsStringAsync().Result;
+                    doctor = JsonConvert.DeserializeObject<DocterViewModel>(data);
 
+                }
+                return View(doctor);
+            }
+            catch (Exception ex)
+            {
+                TempData["errorMassage"] = ex.Message;
+                return View();
+
+            }
+
+        }
         [HttpGet]
         public IActionResult Delete(string id)
         {

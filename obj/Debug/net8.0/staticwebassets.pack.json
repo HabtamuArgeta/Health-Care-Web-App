@@ -257,6 +257,42 @@
       "PackagePath": "staticwebassets\\photos\\Admins\\_IMG_20230505_090741.jpg"
     },
     {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Doctors\\_IMG_20230208_133451.jpg",
+      "PackagePath": "staticwebassets\\photos\\Doctors\\_IMG_20230208_133451.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Doctors\\_IMG_20230505_090741.jpg",
+      "PackagePath": "staticwebassets\\photos\\Doctors\\_IMG_20230505_090741.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Patients\\_IMG_20230505_090741.jpg",
+      "PackagePath": "staticwebassets\\photos\\Patients\\_IMG_20230505_090741.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_IMG_20230208_133451.jpg",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_IMG_20230208_133451.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_IMG_20230505_090741.jpg",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_IMG_20230505_090741.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_photo_2023-11-01_00-58-36.jpg",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_photo_2023-11-01_00-58-36.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_photo_2023-11-01_02-10-16.jpg",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_photo_2023-11-01_02-10-16.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_photo_2023-11-02_04-22-26-removebg-preview.png",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_photo_2023-11-02_04-22-26-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_photo_2023-11-15_11-09-39.jpg",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_photo_2023-11-15_11-09-39.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.HealthCareApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
