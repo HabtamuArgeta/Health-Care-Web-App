@@ -251,11 +251,12 @@ namespace HealthCareApp.Controllers
         {
             try
             {
+
                 HttpResponseMessage response = client.DeleteAsync(client.BaseAddress + $"/Doctors/{id}").Result;
 
                 if (response.IsSuccessStatusCode)
                 {
-                    TempData["successMessage"] = "Student deleted successfully";
+                    TempData["successMessage"] = "Doctor deleted successfully";
                     return RedirectToAction("Index");
                 }
                 return View();

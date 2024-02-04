@@ -1,4 +1,5 @@
-﻿using HealthCareApp.Models;
+﻿using HealthCareApp.Helper;
+using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -42,7 +43,29 @@ namespace HealthCareApp.Controllers
         {
             try
             {
-
+                HttpResponseMessage searchPatient = client.GetAsync(client.BaseAddress + $"/Patients/ByUserName/{appointment.PatientUserName}").Result;
+                HttpResponseMessage searchDoctor = client.GetAsync(client.BaseAddress + $"/Doctors/ByUserName/{appointment.DoctorUserName}").Result;
+                 if (!searchDoctor.IsSuccessStatusCode && !searchPatient.IsSuccessStatusCode)
+                {
+                    TempData["errorMassage"] = $"Doctor with user name  {appointment.DoctorUserName} and Patient with user name  {appointment.PatientUserName}  are not exist";
+                    return View(appointment);
+                }
+               else  if (!searchPatient.IsSuccessStatusCode)
+                {
+                    TempData["errorMassage"] = $"Patient with user name  {appointment.PatientUserName} is not exist";
+                    return View(appointment);
+                }
+                else if (!searchDoctor.IsSuccessStatusCode)
+                {
+                    TempData["errorMassage"] = $"Doctor with user name  {appointment.DoctorUserName} is not exist";
+                    return View(appointment);
+                }
+               
+                if (searchPatient.IsSuccessStatusCode && Roles.UserName != appointment.PatientUserName)
+                {
+                    TempData["errorMassage"] = $"You are not authorized to make appointment as {appointment.PatientUserName},Use your user name instead !";
+                    return View(appointment);
+                }
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
                 multiPartContent.Add(new StringContent(appointment.DoctorUserName ?? "", Encoding.UTF8), "DoctorUserName");
                 multiPartContent.Add(new StringContent(appointment.PatientUserName ?? "", Encoding.UTF8), "PatientUserName");

@@ -1,4 +1,5 @@
-﻿using HealthCareApp.Models;
+﻿using HealthCareApp.Helper;
+using HealthCareApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
@@ -42,7 +43,18 @@ namespace HealthCareApp.Controllers
         {
             try
             {
+                HttpResponseMessage search = client.GetAsync(client.BaseAddress + $"/Doctors/ByUserName/{posts.DoctorUserName}").Result;
 
+                if (!search.IsSuccessStatusCode)
+                {
+                    TempData["errorMassage"] = $"Doctor with user name  {posts.DoctorUserName} is not exist";
+                    return View(posts);
+                }
+                if (search.IsSuccessStatusCode && Roles.UserName != posts.DoctorUserName)
+                {
+                    TempData["errorMassage"] = $"You are not authorized to post as {posts.DoctorUserName},Use your user name instead !";
+                    return View(posts);
+                }
                 using MultipartFormDataContent multiPartContent = new MultipartFormDataContent();
                 multiPartContent.Add(new StringContent(posts.DoctorUserName ?? "", Encoding.UTF8), "DoctorUserName");
                 multiPartContent.Add(new StringContent(posts.DatePublished ?? "", Encoding.UTF8), "DatePublished");

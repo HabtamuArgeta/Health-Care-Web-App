@@ -20,28 +20,34 @@
                 <th>Doctor's Username</th>
                 <th>Patient's Username</th>
                 <th>Date and Time</th>
-                <th>Actions</th>
+               @if (Roles.UserRole == "Patient")
+                  {
+                     <th>Actions</th>
+                  }
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
-                <tr>
-                    
-                    <td>@Html.DisplayFor(modelItem => item.DoctorUserName)</td>
-                    <td>@Html.DisplayFor(modelItem => item.PatientUserName)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Date)</td>
-                    <td>
-                        <div class="btn-group" role="group">
-                            @if (Roles.UserRole == "Patient")
-                            {
-                                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
-                                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                            }
-                        </div>
+                @if (Roles.UserName == item.PatientUserName || Roles.UserName == item.DoctorUserName)
+                {
+                    <tr>
+
+                        <td>@Html.DisplayFor(modelItem => item.DoctorUserName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PatientUserName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Date)</td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                @if (Roles.UserRole == "Patient")
+                                {
+                                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info">Details</a>
+                                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                }
+                            </div>
                     </td>
                 </tr>
+                }
             }
         </tbody>
     </table>

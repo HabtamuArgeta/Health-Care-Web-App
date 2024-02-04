@@ -257,6 +257,10 @@
       "PackagePath": "staticwebassets\\photos\\Admins\\_IMG_20230505_090741.jpg"
     },
     {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Doctors\\_Abdi.jpg",
+      "PackagePath": "staticwebassets\\photos\\Doctors\\_Abdi.jpg"
+    },
+    {
       "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Doctors\\_IMG_20230208_133451.jpg",
       "PackagePath": "staticwebassets\\photos\\Doctors\\_IMG_20230208_133451.jpg"
     },
@@ -265,8 +269,44 @@
       "PackagePath": "staticwebassets\\photos\\Doctors\\_IMG_20230505_090741.jpg"
     },
     {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Doctors\\_kedir.jpg",
+      "PackagePath": "staticwebassets\\photos\\Doctors\\_kedir.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Patients\\_Eba.jpg",
+      "PackagePath": "staticwebassets\\photos\\Patients\\_Eba.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Patients\\_Engifano.jpg",
+      "PackagePath": "staticwebassets\\photos\\Patients\\_Engifano.jpg"
+    },
+    {
       "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Patients\\_IMG_20230505_090741.jpg",
       "PackagePath": "staticwebassets\\photos\\Patients\\_IMG_20230505_090741.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Patients\\_Untitled design.png",
+      "PackagePath": "staticwebassets\\photos\\Patients\\_Untitled design.png"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Patients\\_photo_2023-11-15_11-09-39.jpg",
+      "PackagePath": "staticwebassets\\photos\\Patients\\_photo_2023-11-15_11-09-39.jpg"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_2023-09-26 18-24-50-07.png",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_2023-09-26 18-24-50-07.png"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_2023-09-26 18-30-00-27.png",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_2023-09-26 18-30-00-27.png"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_2023-09-26 18-30-17-63.png",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_2023-09-26 18-30-17-63.png"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_2023-09-26 18-32-35-87.png",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_2023-09-26 18-32-35-87.png"
     },
     {
       "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_IMG_20230208_133451.jpg",
@@ -287,6 +327,10 @@
     {
       "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_photo_2023-11-02_04-22-26-removebg-preview.png",
       "PackagePath": "staticwebassets\\photos\\Posts\\_photo_2023-11-02_04-22-26-removebg-preview.png"
+    },
+    {
+      "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_photo_2023-11-13_19-53-46.jpg",
+      "PackagePath": "staticwebassets\\photos\\Posts\\_photo_2023-11-13_19-53-46.jpg"
     },
     {
       "Id": "C:\\Program Files\\installed apps\\Linux comanned\\crzylearning\\DotNet Apps\\HealthCareApp\\wwwroot\\photos\\Posts\\_photo_2023-11-15_11-09-39.jpg",
